@@ -1,46 +1,47 @@
-'''Task #2
-Here is a Python script that accomplishes the two tasks described:
+# Task 1: Leap Year Checker
 
-Calculate the square and cube of a given number.
-Compare two numbers and print whether the first number is greater than, less than, or equal to the second number.
-python
-Copy code
-# Task 2.1: Calculate the square and cube of a given number '''
-def calculate_square_and_cube(num):
-    square = num ** 2
-    cube = num ** 3
-    return square, cube
-
-num = 2
-square, cube = calculate_square_and_cube(num)
-print(f"The square of {num} is {square} and the cube is {cube}.")
-
-# Task 2.2: Compare two numbers
-def compare_numbers(num1, num2):
-    if num1 > num2:
-        print(f"{num1} is greater than {num2}.")
-    elif num1 < num2:
-        print(f"{num1} is less than {num2}.")
+def is_leap_year(year):
+    if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+        return "Leap year"
     else:
-        print(f"{num1} is equal to {num2}.")
+        return "Not a leap year"
 
-num1 = int(input("Enter the first number: "))
-num2 = int(input("Enter the second number: "))
-compare_numbers(num1, num2)
+year = 2024
+print(f"Input = {year}")
+print(f"Output = {is_leap_year(year)}")
 
-'''Explanation:
-Task 2.1: Calculate the square and cube of a given number
+# Task 2: Triangle Classifier
 
-The function calculate_square_and_cube(num) takes a number as input and returns its square and cube using the ** operator.
+def classify_triangle(side1, side2, side3):
+    if side1 == side2 == side3:
+        return "Eq"  # Equilateral triangle
+    elif side1 == side2 or side1 == side3 or side2 == side3:
+        return "Iso"  # Isosceles triangle
+    else:
+        return "Scalene"  # Scalene triangle
 
-Task 2.2: Compare two numbers
+side1,side2,side3 = 5,5,5
+print(f"Input sides: {side1}, {side2}, {side3}")
+print(f"Output: {classify_triangle(side1, side2, side3)}")
 
-The function compare_numbers(num1, num2) takes two numbers as input and compares them using comparison operators (>, <, ==). It prints the result of the comparison.
+# Task 3: Factorial
 
-To run this script, you can copy it into a Python environment. The first part calculates the square and cube of the number 2, 
-and the second part compares two numbers entered by the user. '''
+def factorial(n):
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+    return result
 
+n = 5
+print(f"{n}! = {factorial(n)}")
 
+# Task 4: Fibonacci Series
 
+def fibonacci(n):
+    fib_series = [0, 1]
+    while len(fib_series) < n:
+        fib_series.append(fib_series[-1] + fib_series[-2])
+    return fib_series[:n]
 
-
+n = 7
+print(f"Fibonacci series up to {n} terms: {fibonacci(n)}")
