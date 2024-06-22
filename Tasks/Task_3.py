@@ -29,8 +29,7 @@ print(count)
 
 # Anagrams
 
-s1 = "silent"
-s2 = "listen"
+s1, s2 = "silent", "listen"
 s1 = s1.replace(" ", "").lower()
 s2 = s2.replace(" ", "").lower()
 if len(s1) != len(s2):
